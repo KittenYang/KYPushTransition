@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  FirstViewController.m
 //  KYPushTransitionDemo
 //
 //  Created by Kitten Yang on 4/18/15.
 //  Copyright (c) 2015 Kitten Yang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FirstViewController.h"
 
-@interface ViewController ()
+@interface FirstViewController ()
 
 @end
 
-@implementation ViewController
+@implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+//Unwind Segue
+-(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
+    
 }
 
 @end

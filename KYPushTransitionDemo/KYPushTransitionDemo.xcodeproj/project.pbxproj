@@ -15,6 +15,7 @@
 		5F3362D91AE294C600D574A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3362D71AE294C600D574A1 /* LaunchScreen.xib */; };
 		5F3362E51AE294C700D574A1 /* KYPushTransitionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362E41AE294C700D574A1 /* KYPushTransitionDemoTests.m */; };
 		5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362EF1AE2950900D574A1 /* KYPushTransition.m */; };
+		5F3362F51AE2A94C00D574A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362F41AE2A94C00D574A1 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		5F3362E41AE294C700D574A1 /* KYPushTransitionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYPushTransitionDemoTests.m; sourceTree = "<group>"; };
 		5F3362EE1AE2950900D574A1 /* KYPushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPushTransition.h; sourceTree = "<group>"; };
 		5F3362EF1AE2950900D574A1 /* KYPushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPushTransition.m; sourceTree = "<group>"; };
+		5F3362F31AE2A94C00D574A1 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		5F3362F41AE2A94C00D574A1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				5F3362CD1AE294C600D574A1 /* AppDelegate.m */,
 				5F3362CF1AE294C600D574A1 /* FirstViewController.h */,
 				5F3362D01AE294C600D574A1 /* FirstViewController.m */,
+				5F3362F31AE2A94C00D574A1 /* SecondViewController.h */,
+				5F3362F41AE2A94C00D574A1 /* SecondViewController.m */,
 				5F3362F11AE2951800D574A1 /* class */,
 				5F3362D21AE294C600D574A1 /* Main.storyboard */,
 				5F3362D51AE294C600D574A1 /* Images.xcassets */,
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3362F51AE2A94C00D574A1 /* SecondViewController.m in Sources */,
 				5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */,
 				5F3362D11AE294C600D574A1 /* FirstViewController.m in Sources */,
 				5F3362CE1AE294C600D574A1 /* AppDelegate.m in Sources */,
@@ -363,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinyu Li (XWYND9KE57)";
 				INFOPLIST_FILE = KYPushTransitionDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
