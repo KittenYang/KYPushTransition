@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XfI-Du-9AP" kind="show" id="x6e-Fk-sP9"/>
+                                    <segue destination="XfI-Du-9AP" kind="custom" id="x6e-Fk-sP9"/>
                                 </connections>
                             </button>
                         </subviews>

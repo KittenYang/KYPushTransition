@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KYPushTransition.h"
 
 @interface FirstViewController : UIViewController<UIViewControllerTransitioningDelegate>
 

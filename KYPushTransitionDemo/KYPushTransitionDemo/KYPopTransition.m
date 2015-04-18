@@ -1,25 +1,25 @@
 //
-//  KYPushTransition.m
+//  KYPopTransition.m
 //  KYPushTransitionDemo
 //
-//  Created by Kitten Yang on 4/18/15.
+//  Created by Kitten Yang on 4/19/15.
 //  Copyright (c) 2015 Kitten Yang. All rights reserved.
 //
 
-#import "KYPushTransition.h"
+#import "KYPopTransition.h"
 
-@interface KYPushTransition()
+@interface KYPopTransition()
 
 @property (nonatomic,strong)id<UIViewControllerContextTransitioning> transitionContext;
 
 @end
 
-@implementation KYPushTransition
+@implementation KYPopTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
+
     return 0.7f;
 }
-
 
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
@@ -41,26 +41,24 @@
     
     CABasicAnimation *rotationAnim_from = [CABasicAnimation animationWithKeyPath:@"rotationY"];
     rotationAnim_from.duration = [self transitionDuration:transitionContext];
-    rotationAnim_from.toValue = @(-M_PI/2);
+    rotationAnim_from.toValue = @(M_PI/2);
     rotationAnim_from.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_from.delegate = self;
-    [fromView.layer addAnimation:rotationAnim_from forKey:@"push_rotationAnim_from"];
+    [fromView.layer addAnimation:rotationAnim_from forKey:@"pop_rotationAnim_from"];
     
     
     CABasicAnimation *rotationAnim_to = [CABasicAnimation animationWithKeyPath:@"rotationY"];
     rotationAnim_to.duration = [self transitionDuration:transitionContext];
-    rotationAnim_to.fromValue = @(M_PI/2);
+    rotationAnim_to.fromValue = @(-M_PI/2);
     rotationAnim_to.toValue = @(0);
     rotationAnim_to.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_to.delegate = self;
-    [toView.layer addAnimation:rotationAnim_to forKey:@"push_rotationAnim_to"];
+    [toView.layer addAnimation:rotationAnim_to forKey:@"pop_rotationAnim_to"];
     
-    [containerView addSubview:toView];
     [containerView addSubview:fromView];
+    [containerView addSubview:toView];
     
 }
-
-
 
 -(CATransform3D)setTransform3D{
     CATransform3D transfrom = CATransform3DIdentity;
@@ -74,7 +72,6 @@
     
 }
 
-
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     
     //通知transition 已完成
@@ -84,9 +81,3 @@
 
 
 @end
-
-
-
-
-
-

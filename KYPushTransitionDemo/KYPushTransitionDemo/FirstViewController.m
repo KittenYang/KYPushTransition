@@ -7,6 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "KYPushTransition.h"
+#import "KYPopTransition.h"
 
 @interface FirstViewController ()
 
@@ -18,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.transitioningDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,10 +28,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    self.transitioningDelegate = self;
+    
+}
+
 
 //Unwind Segue
 -(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
     
+    SecondViewController *secVC = (SecondViewController *)segue.sourceViewController;
+    secVC.transitioningDelegate = self;
 }
 
 
@@ -38,4 +48,13 @@
     KYPushTransition *pushTransition = [KYPushTransition new];
     return pushTransition;
 }
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    KYPopTransition *popTransition = [KYPopTransition new];
+    return popTransition;
+    
+}
+
+
+
 @end
