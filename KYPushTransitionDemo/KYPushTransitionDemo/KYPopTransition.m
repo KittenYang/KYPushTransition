@@ -30,6 +30,7 @@
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
     UIView *containerView = [transitionContext containerView];
+
     
     fromVC.view.layer.anchorPoint = CGPointMake(0, 0.5);
     fromVC.view.layer.position  = CGPointMake(0, CGRectGetMidY(fromVC.view.bounds));
@@ -62,7 +63,7 @@
 
 -(CATransform3D)setTransform3D{
     CATransform3D transfrom = CATransform3DIdentity;
-    transfrom.m34 = 2.5/-2000;
+    transfrom.m34 = -0.002;
     return transfrom;
 }
 

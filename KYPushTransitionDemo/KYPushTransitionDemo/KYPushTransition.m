@@ -31,21 +31,24 @@
     
     UIView *containerView = [transitionContext containerView];
     
-    fromVC.view.layer.anchorPoint = CGPointMake(0, 0.5);
-    fromVC.view.layer.position  = CGPointMake(0, CGRectGetMidY(fromVC.view.bounds));
-    NSLog(@"fromVC.view.layer.position:%@",NSStringFromCGPoint(fromVC.view.layer.position));
-    fromVC.view.layer.transform  = [self setTransform3D];
+    UIView *fromView = fromVC.view;
+    UIView *toView   = toVC.view;
     
-    toVC.view.layer.anchorPoint = CGPointMake(0, 0.5);
-    toVC.view.layer.position = CGPointMake(0, CGRectGetMidY(toVC.view.bounds));
-    toVC.view.layer.transform = [self setTransform3D];
+    fromView.layer.anchorPoint = CGPointMake(0, 0.5);
+    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds));
+    NSLog(@"fromVC.view.layer.position:%@",NSStringFromCGPoint(fromView.layer.position));
+    fromView.layer.transform  = [self setTransform3D];
+    
+    toView.layer.anchorPoint = CGPointMake(0, 0.5);
+    toView.layer.position = CGPointMake(0, CGRectGetMidY(toView.bounds));
+    toView.layer.transform = [self setTransform3D];
     
     CABasicAnimation *rotationAnim_from = [CABasicAnimation animationWithKeyPath:@"rotationY"];
     rotationAnim_from.duration = [self transitionDuration:transitionContext];
     rotationAnim_from.toValue = @(-M_PI/2);
     rotationAnim_from.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_from.delegate = self;
-    [fromVC.view.layer addAnimation:rotationAnim_from forKey:@"push_rotationAnim_from"];
+    [fromView.layer addAnimation:rotationAnim_from forKey:@"push_rotationAnim_from"];
     
     CABasicAnimation *rotationAnim_to = [CABasicAnimation animationWithKeyPath:@"rotationY"];
     rotationAnim_to.duration = [self transitionDuration:transitionContext];
@@ -53,10 +56,10 @@
     rotationAnim_to.toValue = @(0);
     rotationAnim_to.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_to.delegate = self;
-    [toVC.view.layer addAnimation:rotationAnim_to forKey:@"push_rotationAnim_to"];
+    [toView.layer addAnimation:rotationAnim_to forKey:@"push_rotationAnim_to"];
     
-    [containerView addSubview:toVC.view];
-    [containerView addSubview:fromVC.view];
+    [containerView addSubview:toView];
+    [containerView addSubview:fromView];
     
 }
 
@@ -64,7 +67,7 @@
 
 -(CATransform3D)setTransform3D{
     CATransform3D transfrom = CATransform3DIdentity;
-    transfrom.m34 = 2.5/-2000;
+    transfrom.m34 = -0.002;
     return transfrom;
 }
 
