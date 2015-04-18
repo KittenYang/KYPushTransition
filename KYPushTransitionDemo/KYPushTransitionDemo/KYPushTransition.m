@@ -24,9 +24,17 @@
     UIView *containerView = [transitionContext containerView];
     
     fromView.layer.anchorPoint = CGPointMake(0, 0.5);
-    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds))
+    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds));
+    fromView.layer.transform  = [self setTransform3D];
     
     
 }
 
+
+
+-(CATransform3D)setTransform3D{
+    CATransform3D transfrom = CATransform3DIdentity;
+    transfrom.m34 = 2.5/-2000;
+    return transfrom;
+}
 @end
