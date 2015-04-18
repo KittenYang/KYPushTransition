@@ -10,13 +10,15 @@
 
 @interface FirstViewController ()
 
+//@property(nonatomic,strong)KYPushTransition *pushTransition;
+
 @end
 
 @implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.transitioningDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,4 +32,10 @@
     
 }
 
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    
+    KYPushTransition *pushTransition = [KYPushTransition new];
+    return pushTransition;
+}
 @end
