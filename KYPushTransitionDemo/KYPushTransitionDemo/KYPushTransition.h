@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface KYPushTransition : NSObject
+@interface KYPushTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end
