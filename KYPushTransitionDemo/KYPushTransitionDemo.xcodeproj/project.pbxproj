@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F3362CB1AE294C600D574A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362CA1AE294C600D574A1 /* main.m */; };
+		5F3362CE1AE294C600D574A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362CD1AE294C600D574A1 /* AppDelegate.m */; };
+		5F3362D11AE294C600D574A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362D01AE294C600D574A1 /* ViewController.m */; };
+		5F3362D41AE294C600D574A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F3362D21AE294C600D574A1 /* Main.storyboard */; };
+		5F3362D61AE294C600D574A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3362D51AE294C600D574A1 /* Images.xcassets */; };
+		5F3362D91AE294C600D574A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F3362D71AE294C600D574A1 /* LaunchScreen.xib */; };
+		5F3362E51AE294C700D574A1 /* KYPushTransitionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362E41AE294C700D574A1 /* KYPushTransitionDemoTests.m */; };
+		5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362EF1AE2950900D574A1 /* KYPushTransition.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F3362DF1AE294C700D574A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F3362BD1AE294C600D574A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F3362C41AE294C600D574A1;
+			remoteInfo = KYPushTransitionDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F3362C51AE294C600D574A1 /* KYPushTransitionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYPushTransitionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F3362C91AE294C600D574A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3362CA1AE294C600D574A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F3362CC1AE294C600D574A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F3362CD1AE294C600D574A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F3362CF1AE294C600D574A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5F3362D01AE294C600D574A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5F3362D31AE294C600D574A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F3362D51AE294C600D574A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5F3362D81AE294C600D574A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5F3362DE1AE294C700D574A1 /* KYPushTransitionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYPushTransitionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F3362E31AE294C700D574A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3362E41AE294C700D574A1 /* KYPushTransitionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYPushTransitionDemoTests.m; sourceTree = "<group>"; };
+		5F3362EE1AE2950900D574A1 /* KYPushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPushTransition.h; sourceTree = "<group>"; };
+		5F3362EF1AE2950900D574A1 /* KYPushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPushTransition.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F3362C21AE294C600D574A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F3362DB1AE294C700D574A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F3362BC1AE294C600D574A1 = {
+			isa = PBXGroup;
+			children = (
+				5F3362C71AE294C600D574A1 /* KYPushTransitionDemo */,
+				5F3362E11AE294C700D574A1 /* KYPushTransitionDemoTests */,
+				5F3362C61AE294C600D574A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F3362C61AE294C600D574A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362C51AE294C600D574A1 /* KYPushTransitionDemo.app */,
+				5F3362DE1AE294C700D574A1 /* KYPushTransitionDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F3362C71AE294C600D574A1 /* KYPushTransitionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362CC1AE294C600D574A1 /* AppDelegate.h */,
+				5F3362CD1AE294C600D574A1 /* AppDelegate.m */,
+				5F3362CF1AE294C600D574A1 /* ViewController.h */,
+				5F3362D01AE294C600D574A1 /* ViewController.m */,
+				5F3362F11AE2951800D574A1 /* class */,
+				5F3362D21AE294C600D574A1 /* Main.storyboard */,
+				5F3362D51AE294C600D574A1 /* Images.xcassets */,
+				5F3362D71AE294C600D574A1 /* LaunchScreen.xib */,
+				5F3362C81AE294C600D574A1 /* Supporting Files */,
+			);
+			path = KYPushTransitionDemo;
+			sourceTree = "<group>";
+		};
+		5F3362C81AE294C600D574A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362C91AE294C600D574A1 /* Info.plist */,
+				5F3362CA1AE294C600D574A1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F3362E11AE294C700D574A1 /* KYPushTransitionDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362E41AE294C700D574A1 /* KYPushTransitionDemoTests.m */,
+				5F3362E21AE294C700D574A1 /* Supporting Files */,
+			);
+			path = KYPushTransitionDemoTests;
+			sourceTree = "<group>";
+		};
+		5F3362E21AE294C700D574A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362E31AE294C700D574A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F3362F11AE2951800D574A1 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				5F3362EE1AE2950900D574A1 /* KYPushTransition.h */,
+				5F3362EF1AE2950900D574A1 /* KYPushTransition.m */,
+			);
+			name = class;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F3362C41AE294C600D574A1 /* KYPushTransitionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F3362E81AE294C700D574A1 /* Build configuration list for PBXNativeTarget "KYPushTransitionDemo" */;
+			buildPhases = (
+				5F3362C11AE294C600D574A1 /* Sources */,
+				5F3362C21AE294C600D574A1 /* Frameworks */,
+				5F3362C31AE294C600D574A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYPushTransitionDemo;
+			productName = KYPushTransitionDemo;
+			productReference = 5F3362C51AE294C600D574A1 /* KYPushTransitionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F3362DD1AE294C700D574A1 /* KYPushTransitionDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F3362EB1AE294C700D574A1 /* Build configuration list for PBXNativeTarget "KYPushTransitionDemoTests" */;
+			buildPhases = (
+				5F3362DA1AE294C700D574A1 /* Sources */,
+				5F3362DB1AE294C700D574A1 /* Frameworks */,
+				5F3362DC1AE294C700D574A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F3362E01AE294C700D574A1 /* PBXTargetDependency */,
+			);
+			name = KYPushTransitionDemoTests;
+			productName = KYPushTransitionDemoTests;
+			productReference = 5F3362DE1AE294C700D574A1 /* KYPushTransitionDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F3362BD1AE294C600D574A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Kitten Yang";
+				TargetAttributes = {
+					5F3362C41AE294C600D574A1 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					5F3362DD1AE294C700D574A1 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 5F3362C41AE294C600D574A1;
+					};
+				};
+			};
+			buildConfigurationList = 5F3362C01AE294C600D574A1 /* Build configuration list for PBXProject "KYPushTransitionDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F3362BC1AE294C600D574A1;
+			productRefGroup = 5F3362C61AE294C600D574A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F3362C41AE294C600D574A1 /* KYPushTransitionDemo */,
+				5F3362DD1AE294C700D574A1 /* KYPushTransitionDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F3362C31AE294C600D574A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F3362D41AE294C600D574A1 /* Main.storyboard in Resources */,
+				5F3362D91AE294C600D574A1 /* LaunchScreen.xib in Resources */,
+				5F3362D61AE294C600D574A1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F3362DC1AE294C700D574A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F3362C11AE294C600D574A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */,
+				5F3362D11AE294C600D574A1 /* ViewController.m in Sources */,
+				5F3362CE1AE294C600D574A1 /* AppDelegate.m in Sources */,
+				5F3362CB1AE294C600D574A1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F3362DA1AE294C700D574A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F3362E51AE294C700D574A1 /* KYPushTransitionDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F3362E01AE294C700D574A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F3362C41AE294C600D574A1 /* KYPushTransitionDemo */;
+			targetProxy = 5F3362DF1AE294C700D574A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F3362D21AE294C600D574A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F3362D31AE294C600D574A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F3362D71AE294C600D574A1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F3362D81AE294C600D574A1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F3362E61AE294C700D574A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F3362E71AE294C700D574A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F3362E91AE294C700D574A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KYPushTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F3362EA1AE294C700D574A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KYPushTransitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5F3362EC1AE294C700D574A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KYPushTransitionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KYPushTransitionDemo.app/KYPushTransitionDemo";
+			};
+			name = Debug;
+		};
+		5F3362ED1AE294C700D574A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KYPushTransitionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KYPushTransitionDemo.app/KYPushTransitionDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F3362C01AE294C600D574A1 /* Build configuration list for PBXProject "KYPushTransitionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F3362E61AE294C700D574A1 /* Debug */,
+				5F3362E71AE294C700D574A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F3362E81AE294C700D574A1 /* Build configuration list for PBXNativeTarget "KYPushTransitionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F3362E91AE294C700D574A1 /* Debug */,
+				5F3362EA1AE294C700D574A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5F3362EB1AE294C700D574A1 /* Build configuration list for PBXNativeTarget "KYPushTransitionDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F3362EC1AE294C700D574A1 /* Debug */,
+				5F3362ED1AE294C700D574A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F3362BD1AE294C600D574A1 /* Project object */;
+}
