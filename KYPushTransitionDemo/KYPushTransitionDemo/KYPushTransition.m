@@ -18,6 +18,15 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
     
+    UIView *fromView = [transitionContext viewControllerForKey:UITransitionContextFromViewKey];
+    UIView *toView = [transitionContext viewControllerForKey:UITransitionContextToViewKey];
+    
+    UIView *containerView = [transitionContext containerView];
+    
+    fromView.layer.anchorPoint = CGPointMake(0, 0.5);
+    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds))
+    
+    
 }
 
 @end

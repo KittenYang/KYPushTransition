@@ -66,10 +66,11 @@
                             <constraint firstAttribute="centerY" secondItem="bNp-0i-c0n" secondAttribute="centerY" id="fcN-h4-n4L"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NXG-Kh-pqi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncu-fg-V7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="429"/>
+            <point key="canvasLocation" x="1049" y="348"/>
         </scene>
     </scenes>
 </document>
