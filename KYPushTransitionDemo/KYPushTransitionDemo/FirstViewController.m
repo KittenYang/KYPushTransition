@@ -32,15 +32,10 @@
     
     self.transitioningDelegate = self;
     
-}
-
-
-//Unwind Segue
--(IBAction)unwindSegue:(UIStoryboardSegue *)segue{
-    
-    SecondViewController *secVC = (SecondViewController *)segue.sourceViewController;
+    SecondViewController *secVC = (SecondViewController *)segue.destinationViewController;
     secVC.transitioningDelegate = self;
 }
+
 
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{

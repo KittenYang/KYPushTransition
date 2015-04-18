@@ -26,25 +26,25 @@
     
     self.transitionContext = transitionContext;
     
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
     UIView *containerView = [transitionContext containerView];
     
-    fromView.layer.anchorPoint = CGPointMake(0, 0.5);
-    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds));
-    fromView.layer.transform  = [self setTransform3D];
+    fromVC.view.layer.anchorPoint = CGPointMake(0, 0.5);
+    fromVC.view.layer.position  = CGPointMake(0, CGRectGetMidY(fromVC.view.bounds));
+    fromVC.view.layer.transform  = [self setTransform3D];
     
-    toView.layer.anchorPoint = CGPointMake(0, 0.5);
-    toView.layer.position = CGPointMake(0, CGRectGetMidY(toView.bounds));
-    toView.layer.transform = [self setTransform3D];
+    toVC.view.layer.anchorPoint = CGPointMake(0, 0.5);
+    toVC.view.layer.position = CGPointMake(0, CGRectGetMidY(toVC.view.bounds));
+    toVC.view.layer.transform = [self setTransform3D];
     
     CABasicAnimation *rotationAnim_from = [CABasicAnimation animationWithKeyPath:@"rotationY"];
     rotationAnim_from.duration = [self transitionDuration:transitionContext];
     rotationAnim_from.toValue = @(M_PI/2);
     rotationAnim_from.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_from.delegate = self;
-    [fromView.layer addAnimation:rotationAnim_from forKey:@"pop_rotationAnim_from"];
+    [fromVC.view.layer addAnimation:rotationAnim_from forKey:@"pop_rotationAnim_from"];
     
     
     CABasicAnimation *rotationAnim_to = [CABasicAnimation animationWithKeyPath:@"rotationY"];
@@ -53,10 +53,10 @@
     rotationAnim_to.toValue = @(0);
     rotationAnim_to.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     rotationAnim_to.delegate = self;
-    [toView.layer addAnimation:rotationAnim_to forKey:@"pop_rotationAnim_to"];
+    [toVC.view.layer addAnimation:rotationAnim_to forKey:@"pop_rotationAnim_to"];
     
-    [containerView addSubview:fromView];
-    [containerView addSubview:toView];
+    [containerView addSubview:fromVC.view];
+    [containerView addSubview:toVC.view];
     
 }
 
