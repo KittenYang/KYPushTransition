@@ -134,7 +134,6 @@
     [containerView sendSubviewToBack:view];
 //    view.hidden = YES;
     return snapshot;
-
 }
 
 - (void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView*)view {

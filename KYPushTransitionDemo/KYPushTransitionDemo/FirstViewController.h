@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController<UIViewControllerTransitioningDelegate>
+@interface FirstViewController : UIViewController<UINavigationControllerDelegate>
 
 
 @end

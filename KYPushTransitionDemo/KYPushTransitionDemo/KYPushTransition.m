@@ -31,9 +31,13 @@
     //把toView加到containerView上
     FirstViewController *fromVC = (FirstViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+//    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+//    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    UIView *fromView = fromVC.view;
+    UIView *toView = toVC.view;
+
     UIView *containerView = [transitionContext containerView];
+    
     [containerView addSubview:toView];
     [containerView sendSubviewToBack:toView];//?
     
@@ -47,12 +51,6 @@
     fromView.frame = initialFrame;
     toView.frame = initialFrame;
     
-    //分别给fromVC和toVC创建一张截图
-//    UIView *toViewSnapshots = [self createSnapshots:toView afterScreenUpdates:YES];
-//    UIView *fromViewSnapshots = [self createSnapshots:fromView afterScreenUpdates:NO];//?
-    
-    //改变View的锚点
-    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:toView];
     [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
     
     //增加阴影
@@ -78,10 +76,8 @@
             shadow.alpha = 1.0;
         }];
     } completion:^(BOOL finished) {
+         [transitionContext completeTransition:YES];
         [self removeOtherViews:toView];
-        toVC.backButton.userInteractionEnabled = YES;
-        
-        
     }];
     
 }
@@ -94,22 +90,6 @@
             [view removeFromSuperview];
         }
     }
-}
-
-//给传入的view创建的截图
-- (UIView*)createSnapshots:(UIView*)view afterScreenUpdates:(BOOL) afterUpdates{
-    UIView *contView = view.superview;
-    
-    //创建视图
-    CGRect snapshotRegion = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
-    UIView *leftHandView = [view resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:afterUpdates withCapInsets:UIEdgeInsetsZero];
-    leftHandView.frame = snapshotRegion;
-    [contView addSubview:leftHandView];
-
-    [contView sendSubviewToBack:view];//?
-    
-    return leftHandView;
-    
 }
 
 
