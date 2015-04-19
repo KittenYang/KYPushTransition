@@ -17,8 +17,6 @@
 		5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362EF1AE2950900D574A1 /* KYPushTransition.m */; };
 		5F3362F51AE2A94C00D574A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362F41AE2A94C00D574A1 /* SecondViewController.m */; };
 		5F3362F81AE2BB9000D574A1 /* KYPopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362F71AE2BB9000D574A1 /* KYPopTransition.m */; };
-		5F3362FB1AE38F5400D574A1 /* CEFlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362FA1AE38F5400D574A1 /* CEFlipAnimationController.m */; };
-		5F3362FE1AE38F7600D574A1 /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362FD1AE38F7600D574A1 /* CEReversibleAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +49,6 @@
 		5F3362F41AE2A94C00D574A1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		5F3362F61AE2BB9000D574A1 /* KYPopTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPopTransition.h; sourceTree = "<group>"; };
 		5F3362F71AE2BB9000D574A1 /* KYPopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPopTransition.m; sourceTree = "<group>"; };
-		5F3362F91AE38F5400D574A1 /* CEFlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFlipAnimationController.h; sourceTree = "<group>"; };
-		5F3362FA1AE38F5400D574A1 /* CEFlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFlipAnimationController.m; sourceTree = "<group>"; };
-		5F3362FC1AE38F7600D574A1 /* CEReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEReversibleAnimationController.h; sourceTree = "<group>"; };
-		5F3362FD1AE38F7600D574A1 /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +97,6 @@
 				5F3362F31AE2A94C00D574A1 /* SecondViewController.h */,
 				5F3362F41AE2A94C00D574A1 /* SecondViewController.m */,
 				5F3362F11AE2951800D574A1 /* class */,
-				5F3362FC1AE38F7600D574A1 /* CEReversibleAnimationController.h */,
-				5F3362FD1AE38F7600D574A1 /* CEReversibleAnimationController.m */,
-				5F3362F91AE38F5400D574A1 /* CEFlipAnimationController.h */,
-				5F3362FA1AE38F5400D574A1 /* CEFlipAnimationController.m */,
 				5F3362D21AE294C600D574A1 /* Main.storyboard */,
 				5F3362D51AE294C600D574A1 /* Images.xcassets */,
 				5F3362D71AE294C600D574A1 /* LaunchScreen.xib */,
@@ -253,12 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3362F81AE2BB9000D574A1 /* KYPopTransition.m in Sources */,
-				5F3362FE1AE38F7600D574A1 /* CEReversibleAnimationController.m in Sources */,
 				5F3362F51AE2A94C00D574A1 /* SecondViewController.m in Sources */,
 				5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */,
 				5F3362D11AE294C600D574A1 /* FirstViewController.m in Sources */,
 				5F3362CE1AE294C600D574A1 /* AppDelegate.m in Sources */,
-				5F3362FB1AE38F5400D574A1 /* CEFlipAnimationController.m in Sources */,
 				5F3362CB1AE294C600D574A1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

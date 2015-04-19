@@ -20,7 +20,7 @@
 @implementation KYPushTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 0.7f;
+    return 1.5f;
 }
 
 
@@ -31,8 +31,6 @@
     //把toView加到containerView上
     FirstViewController *fromVC = (FirstViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-//    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-//    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     UIView *fromView = fromVC.view;
     UIView *toView = toVC.view;
 
@@ -51,7 +49,7 @@
     fromView.frame = initialFrame;
     toView.frame = initialFrame;
     
-//    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
+    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
     
     //增加阴影
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -76,30 +74,22 @@
             shadow.alpha = 1.0;
         }];
     } completion:^(BOOL finished) {
+        fromView.layer.anchorPoint = CGPointMake(0.5, 0.5);
+        fromView.frame = initialFrame;
         fromView.layer.transform = CATransform3DIdentity;
         [shadow removeFromSuperview];
         [transitionContext completeTransition:YES];
-//        [self removeOtherViews:toView];
+
     }];
     
-}
-
-//移除除了传入View之外的所有视图
-- (void)removeOtherViews:(UIView*)viewToKeep {
-    UIView* containerView = viewToKeep.superview;
-    for (UIView* view in containerView.subviews) {
-        if (view != viewToKeep) {
-            [view removeFromSuperview];
-        }
-    }
 }
 
 
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-//    float xOffset = anchorPoint.x - 0.5;
-//    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
+    float xOffset = anchorPoint.x - 0.5;
+    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
 }
 
 @end
