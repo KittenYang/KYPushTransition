@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="vgd-Pr-ydX">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z6-Hy-i0d">
                                 <rect key="frame" x="283" y="285" width="35" height="30"/>
                                 <state key="normal" title="Push">
@@ -29,8 +32,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.833307782" blue="0.25078605739999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vgd-Pr-ydX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Ta-4i-OGZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vgd-Pr-ydX" secondAttribute="bottom" id="HcW-Vx-pCf"/>
                             <constraint firstAttribute="centerX" secondItem="7z6-Hy-i0d" secondAttribute="centerX" id="LfL-lm-foY"/>
                             <constraint firstAttribute="centerY" secondItem="7z6-Hy-i0d" secondAttribute="centerY" id="m80-KV-6CE"/>
+                            <constraint firstAttribute="trailing" secondItem="vgd-Pr-ydX" secondAttribute="trailing" id="tGD-1t-Uhj"/>
+                            <constraint firstItem="vgd-Pr-ydX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vAW-UJ-ZTq"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -73,4 +80,7 @@
             <point key="canvasLocation" x="1451" y="395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="640" height="1136"/>
+    </resources>
 </document>

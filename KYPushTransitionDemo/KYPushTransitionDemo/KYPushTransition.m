@@ -93,15 +93,17 @@
     //增加阴影
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = fromView.bounds;
-    gradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor,(id)[UIColor colorWithWhite:0.0 alpha:1].CGColor];
+    gradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.5].CGColor,
+                        (id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor];
     gradient.startPoint = CGPointMake(0.0, 0.5);
-    gradient.endPoint = CGPointMake(1.0, 0.5);
+    gradient.endPoint = CGPointMake(0.8, 0.5);
     
     UIView *shadow = [[UIView alloc]initWithFrame:fromView.bounds];
     shadow.backgroundColor = [UIColor clearColor];
-    [shadow.layer insertSublayer:gradient atIndex:0];
+    [shadow.layer insertSublayer:gradient atIndex:1];
+    shadow.alpha = 0.0;
     
-    [fromView addSubview:shadow];
+    [fromViewSnapshots addSubview:shadow];
     
     
     
@@ -113,6 +115,7 @@
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
             //旋转fromView 90度
             fromViewSnapshots.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
+            shadow.alpha = 1.0;
         }];
     } completion:^(BOOL finished) {
         [self removeOtherViews:toView];
