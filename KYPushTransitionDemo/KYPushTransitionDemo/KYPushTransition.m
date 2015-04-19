@@ -20,7 +20,7 @@
 @implementation KYPushTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 1.5f;
+    return 0.6f;
 }
 
 
@@ -37,7 +37,7 @@
     UIView *containerView = [transitionContext containerView];
     
     [containerView addSubview:toView];
-    [containerView sendSubviewToBack:toView];//?
+    [containerView sendSubviewToBack:toView];
     
     //增加透视的transform
     CATransform3D transform = CATransform3DIdentity;
@@ -67,13 +67,15 @@
     [fromView addSubview:shadow];
     
     
-    [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:0 animations:^{
-        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
-            //旋转fromView 90度
-            fromView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
-            shadow.alpha = 1.0;
-        }];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+
+        //旋转fromView 90度
+        fromView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
+        shadow.alpha = 1.0;
+
     } completion:^(BOOL finished) {
+
         fromView.layer.anchorPoint = CGPointMake(0.5, 0.5);
         fromView.frame = initialFrame;
         fromView.layer.transform = CATransform3DIdentity;
@@ -88,8 +90,7 @@
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-    float xOffset = anchorPoint.x - 0.5;
-    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
+    view.layer.position    = CGPointMake(0, CGRectGetMidY(view.bounds));
 }
 
 @end

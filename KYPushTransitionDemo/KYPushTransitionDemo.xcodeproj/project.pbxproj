@@ -17,6 +17,7 @@
 		5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362EF1AE2950900D574A1 /* KYPushTransition.m */; };
 		5F3362F51AE2A94C00D574A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362F41AE2A94C00D574A1 /* SecondViewController.m */; };
 		5F3362F81AE2BB9000D574A1 /* KYPopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3362F71AE2BB9000D574A1 /* KYPopTransition.m */; };
+		5F3363011AE3E5B900D574A1 /* KYPopInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3363001AE3E5B900D574A1 /* KYPopInteractiveTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		5F3362F41AE2A94C00D574A1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		5F3362F61AE2BB9000D574A1 /* KYPopTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPopTransition.h; sourceTree = "<group>"; };
 		5F3362F71AE2BB9000D574A1 /* KYPopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPopTransition.m; sourceTree = "<group>"; };
+		5F3362FF1AE3E5B900D574A1 /* KYPopInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPopInteractiveTransition.h; sourceTree = "<group>"; };
+		5F3363001AE3E5B900D574A1 /* KYPopInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPopInteractiveTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				5F3362EF1AE2950900D574A1 /* KYPushTransition.m */,
 				5F3362F61AE2BB9000D574A1 /* KYPopTransition.h */,
 				5F3362F71AE2BB9000D574A1 /* KYPopTransition.m */,
+				5F3362FF1AE3E5B900D574A1 /* KYPopInteractiveTransition.h */,
+				5F3363001AE3E5B900D574A1 /* KYPopInteractiveTransition.m */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				5F3362F01AE2950900D574A1 /* KYPushTransition.m in Sources */,
 				5F3362D11AE294C600D574A1 /* FirstViewController.m in Sources */,
 				5F3362CE1AE294C600D574A1 /* AppDelegate.m in Sources */,
+				5F3363011AE3E5B900D574A1 /* KYPopInteractiveTransition.m in Sources */,
 				5F3362CB1AE294C600D574A1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

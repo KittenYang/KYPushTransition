@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KYPushTransitionDemo/FirstViewController.m"
-            timestampString = "451133321.170723"
+            filePath = "KYPushTransitionDemo/KYPopInteractiveTransition.m"
+            timestampString = "451145328.49916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-navigationController:animationControllerForOperation:fromViewController:toViewController:"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-edgeGesPan:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

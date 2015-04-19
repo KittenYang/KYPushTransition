@@ -10,6 +10,7 @@
 #import "SecondViewController.h"
 #import "KYPushTransition.h"
 #import "KYPopTransition.h"
+#import "KYPopInteractiveTransition.h"
 
 
 @interface FirstViewController ()
@@ -18,7 +19,9 @@
 
 @end
 
-@implementation FirstViewController
+@implementation FirstViewController{
+    KYPopInteractiveTransition *popInteractive;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +37,8 @@
     
     SecondViewController *secVC = (SecondViewController *)segue.destinationViewController;
     secVC.transitioningDelegate = self;
-    
+    popInteractive = [KYPopInteractiveTransition new];
+    [popInteractive addPopGesture:secVC];
     [super prepareForSegue:segue sender:sender];
     
 }
@@ -74,5 +78,9 @@
 }
 
 
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
+    return popInteractive.interacting ? popInteractive : nil;
+    
+}
 
 @end

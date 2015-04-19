@@ -18,7 +18,7 @@
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
 
-    return 1.5f;
+    return 0.6f;
 }
 
 
@@ -49,15 +49,18 @@
     //让toView的截图旋转90度
     toView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0.0, 1.0, 0.0);
     
-    [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:0 animations:^{
-        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
-            //旋转fromView 90度
-            toView.layer.transform = CATransform3DMakeRotation(0, 0, 1.0, 0);
-        }];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+
+        //旋转fromView 90度
+        toView.layer.transform = CATransform3DMakeRotation(0, 0, 1.0, 0);
+
     } completion:^(BOOL finished) {
+
         toView.layer.anchorPoint = CGPointMake(0.5, 0.5);
         toView.frame = initialFrame;
-        [transitionContext completeTransition:YES];
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+
     }];
     
 }
@@ -65,8 +68,7 @@
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-    float xOffset = anchorPoint.x - 0.5;
-    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
+    view.layer.position    = CGPointMake(0, CGRectGetMidY(view.bounds));
 }
 
 
