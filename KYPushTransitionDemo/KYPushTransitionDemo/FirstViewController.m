@@ -11,6 +11,8 @@
 #import "KYPushTransition.h"
 #import "KYPopTransition.h"
 
+#import "CEFlipAnimationController.h"
+
 @interface FirstViewController ()
 
 //@property(nonatomic,strong)KYPushTransition *pushTransition;
@@ -41,15 +43,19 @@
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     
-    KYPushTransition *pushTransition = [KYPushTransition new];
-    return pushTransition;
+//    KYPushTransition *pushTransition = [KYPushTransition new];
+    CEFlipAnimationController *flip = [CEFlipAnimationController new];
+    flip.reverse = YES;
+    return flip;
 }
 
-//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
 //    KYPopTransition *popTransition = [KYPopTransition new];
-//    return popTransition;
-//    
-//}
+    CEFlipAnimationController *flip = [CEFlipAnimationController new];
+    flip.reverse = NO;
+    return flip;
+    
+}
 
 
 

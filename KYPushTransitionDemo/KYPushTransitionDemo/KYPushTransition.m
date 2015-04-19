@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Kitten Yang. All rights reserved.
 //
 
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+
 #import "KYPushTransition.h"
 
 @interface KYPushTransition()
@@ -64,8 +67,8 @@
      */
     
     //把toView加到containerView上
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    FirstViewController *fromVC = (FirstViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     UIView *containerView = [transitionContext containerView];
@@ -119,6 +122,9 @@
         }];
     } completion:^(BOOL finished) {
         [self removeOtherViews:toView];
+        toVC.backButton.userInteractionEnabled = YES;
+        
+        
     }];
     
 }
