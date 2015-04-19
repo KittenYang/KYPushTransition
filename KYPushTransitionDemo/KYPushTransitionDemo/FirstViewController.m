@@ -39,11 +39,33 @@
     secVC.transitioningDelegate = self;
     popInteractive = [KYPopInteractiveTransition new];
     [popInteractive addPopGesture:secVC];
-    [super prepareForSegue:segue sender:sender];
+//    [super prepareForSegue:segue sender:sender];
+    
+}
+
+#pragma mark -- 直接两个VC之间的present和dismiss的情况下
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    
+    KYPushTransition *flip = [KYPushTransition new];
+
+    return flip;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    KYPopTransition *flip = [KYPopTransition new];
+    return flip;
     
 }
 
 
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
+    return popInteractive.interacting ? popInteractive : nil;
+    
+}
+
+
+#pragma mark -- UINavigationController 控制两个VC的情况下
+/*
 - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
@@ -64,23 +86,10 @@
 }
 
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    
-    KYPushTransition *flip = [KYPushTransition new];
-
-    return flip;
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
+        return popInteractive.interacting ? popInteractive : nil;
 }
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    KYPopTransition *flip = [KYPopTransition new];
-    return flip;
-    
-}
-
-
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator{
-    return popInteractive.interacting ? popInteractive : nil;
-    
-}
+*/
 
 @end
