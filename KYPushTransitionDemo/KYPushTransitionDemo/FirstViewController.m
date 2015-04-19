@@ -30,10 +30,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    self.transitioningDelegate = self;
-    
     SecondViewController *secVC = (SecondViewController *)segue.destinationViewController;
     secVC.transitioningDelegate = self;
+    
+    [super]
+    
 }
 
 
