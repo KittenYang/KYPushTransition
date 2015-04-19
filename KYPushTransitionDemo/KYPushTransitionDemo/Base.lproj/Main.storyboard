@@ -74,6 +74,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NXG-Kh-pqi"/>
+                    <connections>
+                        <outlet property="backButton" destination="bNp-0i-c0n" id="zew-pp-dlx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncu-fg-V7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

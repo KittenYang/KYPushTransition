@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SecondViewController : UIViewController<UIViewControllerTransitioningDelegate>
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 @end

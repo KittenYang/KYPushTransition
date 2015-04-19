@@ -45,11 +45,11 @@
     return pushTransition;
 }
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    KYPopTransition *popTransition = [KYPopTransition new];
-    return popTransition;
-    
-}
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    KYPopTransition *popTransition = [KYPopTransition new];
+//    return popTransition;
+//    
+//}
 
 
 
