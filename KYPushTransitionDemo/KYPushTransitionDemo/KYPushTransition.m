@@ -51,7 +51,7 @@
     fromView.frame = initialFrame;
     toView.frame = initialFrame;
     
-    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
+//    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
     
     //增加阴影
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -76,8 +76,10 @@
             shadow.alpha = 1.0;
         }];
     } completion:^(BOOL finished) {
-         [transitionContext completeTransition:YES];
-        [self removeOtherViews:toView];
+        fromView.layer.transform = CATransform3DIdentity;
+        [shadow removeFromSuperview];
+        [transitionContext completeTransition:YES];
+//        [self removeOtherViews:toView];
     }];
     
 }
@@ -96,8 +98,8 @@
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-    float xOffset = anchorPoint.x - 0.5;
-    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
+//    float xOffset = anchorPoint.x - 0.5;
+//    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
 }
 
 @end

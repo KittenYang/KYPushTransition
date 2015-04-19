@@ -78,7 +78,7 @@
         }];
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:YES];
-        [self removeOtherViews:toView];
+//        [self removeOtherViews:toView];
     }];
     
 }
