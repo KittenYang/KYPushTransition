@@ -43,16 +43,16 @@
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     
-//    KYPushTransition *pushTransition = [KYPushTransition new];
-    CEFlipAnimationController *flip = [CEFlipAnimationController new];
-    flip.reverse = YES;
+    KYPushTransition *flip = [KYPushTransition new];
+//    CEFlipAnimationController *flip = [CEFlipAnimationController new];
+//    flip.reverse = YES;
     return flip;
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-//    KYPopTransition *popTransition = [KYPopTransition new];
-    CEFlipAnimationController *flip = [CEFlipAnimationController new];
-    flip.reverse = NO;
+    KYPopTransition *flip = [KYPopTransition new];
+//    CEFlipAnimationController *flip = [CEFlipAnimationController new];
+//    flip.reverse = NO;
     return flip;
     
 }

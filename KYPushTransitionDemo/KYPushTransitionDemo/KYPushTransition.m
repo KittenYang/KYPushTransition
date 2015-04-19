@@ -27,44 +27,6 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
     
-    /*
-    self.transitionContext = transitionContext;
-    
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIView *containerView = [transitionContext containerView];
-    
-    UIView *fromView = fromVC.view;
-    UIView *toView   = toVC.view;
-    
-    fromView.layer.anchorPoint = CGPointMake(0, 0.5);
-    fromView.layer.position  = CGPointMake(0, CGRectGetMidY(fromView.bounds));
-    NSLog(@"fromVC.view.layer.position:%@",NSStringFromCGPoint(fromView.layer.position));
-    fromView.layer.transform  = [self setTransform3D];
-    
-    toView.layer.anchorPoint = CGPointMake(0, 0.5);
-    toView.layer.position = CGPointMake(0, CGRectGetMidY(toView.bounds));
-    toView.layer.transform = [self setTransform3D];
-    
-    CABasicAnimation *rotationAnim_from = [CABasicAnimation animationWithKeyPath:@"rotationY"];
-    rotationAnim_from.duration = [self transitionDuration:transitionContext];
-    rotationAnim_from.toValue = @(-M_PI/2);
-    rotationAnim_from.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnim_from.delegate = self;
-    [fromView.layer addAnimation:rotationAnim_from forKey:@"push_rotationAnim_from"];
-    
-    CABasicAnimation *rotationAnim_to = [CABasicAnimation animationWithKeyPath:@"rotationY"];
-    rotationAnim_to.duration = [self transitionDuration:transitionContext];
-    rotationAnim_to.fromValue = @(M_PI/2);
-    rotationAnim_to.toValue = @(0);
-    rotationAnim_to.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnim_to.delegate = self;
-    [toView.layer addAnimation:rotationAnim_to forKey:@"push_rotationAnim_to"];
-    
-    [containerView addSubview:toView];
-    [containerView addSubview:fromView];
-     */
     
     //把toView加到containerView上
     FirstViewController *fromVC = (FirstViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -86,12 +48,12 @@
     toView.frame = initialFrame;
     
     //分别给fromVC和toVC创建一张截图
-    UIView *toViewSnapshots = [self createSnapshots:toView afterScreenUpdates:YES];
-    UIView *fromViewSnapshots = [self createSnapshots:fromView afterScreenUpdates:NO];//?
+//    UIView *toViewSnapshots = [self createSnapshots:toView afterScreenUpdates:YES];
+//    UIView *fromViewSnapshots = [self createSnapshots:fromView afterScreenUpdates:NO];//?
     
     //改变View的锚点
-    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:toViewSnapshots];
-    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromViewSnapshots];
+    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:toView];
+    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromView];
     
     //增加阴影
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -106,18 +68,13 @@
     [shadow.layer insertSublayer:gradient atIndex:1];
     shadow.alpha = 0.0;
     
-    [fromViewSnapshots addSubview:shadow];
+    [fromView addSubview:shadow];
     
-    
-    
-    
-    //让toView的截图旋转90度
-//    toViewSnapshots.layer.transform = CATransform3DMakeRotation(M_PI_2, 0.0, 1.0, 0.0);
     
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:0 animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
             //旋转fromView 90度
-            fromViewSnapshots.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
+            fromView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
             shadow.alpha = 1.0;
         }];
     } completion:^(BOOL finished) {
