@@ -33,7 +33,7 @@
     SecondViewController *secVC = (SecondViewController *)segue.destinationViewController;
     secVC.transitioningDelegate = self;
     
-    [super]
+    [super prepareForSegue:segue sender:sender];
     
 }
 

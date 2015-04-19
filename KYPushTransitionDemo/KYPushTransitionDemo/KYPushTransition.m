@@ -17,7 +17,7 @@
 @implementation KYPushTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 6.0f;
+    return 2.0f;
 }
 
 
@@ -89,6 +89,22 @@
     //改变View的锚点
     [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:toViewSnapshots];
     [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromViewSnapshots];
+    
+    //增加阴影
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = fromView.bounds;
+    gradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor,(id)[UIColor colorWithWhite:0.0 alpha:1].CGColor];
+    gradient.startPoint = CGPointMake(0.0, 0.5);
+    gradient.endPoint = CGPointMake(1.0, 0.5);
+    
+    UIView *shadow = [[UIView alloc]initWithFrame:fromView.bounds];
+    shadow.backgroundColor = [UIColor clearColor];
+    [shadow.layer insertSublayer:gradient atIndex:0];
+    
+    [fromView addSubview:shadow];
+    
+    
+    
     
     //让toView的截图旋转90度
 //    toViewSnapshots.layer.transform = CATransform3DMakeRotation(M_PI_2, 0.0, 1.0, 0.0);
