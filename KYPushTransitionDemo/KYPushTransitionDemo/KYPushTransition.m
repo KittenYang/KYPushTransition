@@ -17,7 +17,7 @@
 @implementation KYPushTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 2.0f;
+    return 0.7f;
 }
 
 
@@ -142,8 +142,7 @@
     UIView *leftHandView = [view resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:afterUpdates withCapInsets:UIEdgeInsetsZero];
     leftHandView.frame = snapshotRegion;
     [contView addSubview:leftHandView];
-    
-    
+
     [contView sendSubviewToBack:view];//?
     
     return leftHandView;

@@ -24,6 +24,7 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
     
+    /*
     self.transitionContext = transitionContext;
     
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -58,27 +59,104 @@
     
     [containerView addSubview:fromVC.view];
     [containerView addSubview:toVC.view];
+     */
+    //把toView加到containerView上
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+
+    UIView *containerView = [transitionContext containerView];
+    [containerView addSubview:toView];
+    [containerView sendSubviewToBack:toView];//?
+    
+    //增加透视的transform
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = -0.002;
+    containerView.layer.sublayerTransform = transform;
+    
+    //给fromVC和toVC分别设置相同的起始frame
+    CGRect initialFrame = [transitionContext initialFrameForViewController:fromVC];
+    fromView.frame = initialFrame;
+    toView.frame = initialFrame;
+    
+    //分别给fromVC和toVC创建一张截图
+    UIView *toViewSnapshots = [self createSnapshots:toView afterScreenUpdates:YES];
+    UIView *fromViewSnapshots = [self createSnapshots:fromView afterScreenUpdates:NO];//?
+    
+    //改变View的锚点
+    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:toViewSnapshots];
+    [self updateAnchorPointAndOffset:CGPointMake(0.0, 0.5) view:fromViewSnapshots];
+    
+    //增加阴影
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = fromView.bounds;
+    gradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.5].CGColor,
+                        (id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor];
+    gradient.startPoint = CGPointMake(0.0, 0.5);
+    gradient.endPoint = CGPointMake(0.8, 0.5);
+    
+    UIView *shadow = [[UIView alloc]initWithFrame:fromView.bounds];
+    shadow.backgroundColor = [UIColor clearColor];
+    [shadow.layer insertSublayer:gradient atIndex:1];
+    shadow.alpha = 0.0;
+    
+    [fromViewSnapshots addSubview:shadow];
+    
+    
+    
+    
+    //让toView的截图旋转90度
+    toViewSnapshots.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0.0, 1.0, 0.0);
+    
+    [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:0 animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.5 animations:^{
+            //旋转fromView 90度
+            fromViewSnapshots.layer.transform = CATransform3DMakeRotation(0, 0, 1.0, 0);
+            shadow.alpha = 1.0;
+        }];
+    } completion:^(BOOL finished) {
+        [self removeOtherViews:toView];
+    }];
     
 }
 
--(CATransform3D)setTransform3D{
-    CATransform3D transfrom = CATransform3DIdentity;
-    transfrom.m34 = -0.002;
-    return transfrom;
+//移除除了传入View之外的所有视图
+- (void)removeOtherViews:(UIView*)viewToKeep {
+    UIView* containerView = viewToKeep.superview;
+    for (UIView* view in containerView.subviews) {
+        if (view != viewToKeep) {
+            [view removeFromSuperview];
+        }
+    }
 }
 
-
-#pragma mark - CAAnimationDelegate
-- (void)animationDidStart:(CAAnimation *)anim{
+//给传入的view创建的截图
+- (UIView*)createSnapshots:(UIView*)view afterScreenUpdates:(BOOL) afterUpdates{
+    UIView *contView = view.superview;
+    
+    //创建视图
+    CGRect snapshotRegion = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+    UIView *leftHandView = [view resizableSnapshotViewFromRect:snapshotRegion  afterScreenUpdates:afterUpdates withCapInsets:UIEdgeInsetsZero];
+    leftHandView.frame = snapshotRegion;
+    [contView addSubview:leftHandView];
+    
+    
+    [contView sendSubviewToBack:view];//?
+    
+    return leftHandView;
     
 }
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    
-    //通知transition 已完成
-//    [self.transitionContext completeTransition:YES];
-    
+
+//给传入的View改变锚点
+-(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
+    view.layer.anchorPoint = anchorPoint;
+    float xOffset = anchorPoint.x - 0.5;
+    view.frame = CGRectOffset(view.frame, xOffset *view.frame.size.width, 0);
 }
+
+
 
 
 @end
