@@ -58,7 +58,7 @@
     } completion:^(BOOL finished) {
 
         toView.layer.anchorPoint = CGPointMake(0.5, 0.5);
-        toView.frame = initialFrame;
+        toView.layer.position    = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), CGRectGetMidY([UIScreen mainScreen].bounds));
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 
     }];
@@ -68,7 +68,7 @@
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-    view.layer.position    = CGPointMake(0, CGRectGetMidY(view.bounds));
+    view.layer.position    = CGPointMake(0, CGRectGetMidY([UIScreen mainScreen].bounds));
 }
 
 

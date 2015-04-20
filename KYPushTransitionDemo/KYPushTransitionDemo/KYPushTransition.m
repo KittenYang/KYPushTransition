@@ -77,7 +77,7 @@
     } completion:^(BOOL finished) {
 
         fromView.layer.anchorPoint = CGPointMake(0.5, 0.5);
-        fromView.frame = initialFrame;
+        fromView.layer.position    = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), CGRectGetMidY([UIScreen mainScreen].bounds));
         fromView.layer.transform = CATransform3DIdentity;
         [shadow removeFromSuperview];
         [transitionContext completeTransition:YES];
@@ -90,7 +90,7 @@
 //给传入的View改变锚点
 -(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
     view.layer.anchorPoint = anchorPoint;
-    view.layer.position    = CGPointMake(0, CGRectGetMidY(view.bounds));
+    view.layer.position    = CGPointMake(0, CGRectGetMidY([UIScreen mainScreen].bounds));
 }
 
 @end
