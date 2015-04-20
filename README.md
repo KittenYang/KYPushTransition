@@ -22,7 +22,7 @@
 
 然后分两种情况：
 
-1）如果只是一个VC present 到另一个 VC，那么你需要实现`UIViewControllerTransitioningDelegate`中的两个协议，分别对应`present`和`dismiss`,返回对应的动画:
+###1）如果只是一个VC present 到另一个 VC，那么你需要实现`UIViewControllerTransitioningDelegate`中的两个协议，分别对应`present`和`dismiss`,返回对应的动画:
 
 ```
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
@@ -49,7 +49,7 @@
 ```
 
 
-2）如果你是用UINavigationController控制两个VC，那么需要实现`UINavigationControllerDelegate`中的：
+###2）如果你是用UINavigationController控制两个VC，那么需要实现`UINavigationControllerDelegate`中的：
 ```
 - (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
@@ -80,4 +80,5 @@ UINaviagtionController控制VC的情况下，`UINavigationControllerDelegate`也
 ```
 
 
+点击[博客介绍](http://kittenyang.com/3dfliptransition/)阅读详细实现细节
 
