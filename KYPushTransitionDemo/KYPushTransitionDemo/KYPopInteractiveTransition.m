@@ -24,7 +24,7 @@
 -(void)edgeGesPan:(UIScreenEdgePanGestureRecognizer *)edgeGes{
     CGFloat translation =[edgeGes translationInView:presentedVC.view].x;
     CGFloat percent = translation / (presentedVC.view.bounds.size.width/2);
-    percent = MIN(1.0, MAX(0.0, percent));
+    percent = MIN(0.99, MAX(0.0, percent));
     NSLog(@"%f",percent);
     
     switch (edgeGes.state) {
